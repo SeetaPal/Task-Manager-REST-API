@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "9cacc4a5-c13f-46b4-8dc5-0f255b8fe3b3",
+		"name": "AUTH MODULE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31760627"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"TechNova Solutions Pvt. Ltd\",\r\n  \"email\": \"info@technova.com\",\r\n  \"password\": \"info12345\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"info@technova.com\",\r\n  \"password\": \"info12345\"\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Task",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGQ5NjQ1MmMxNTRiN2JiODYyZjNhYyIsImlhdCI6MTc2MjQ5ODE1MCwiZXhwIjoxNzYzMTAyOTUwfQ.elygHR15pNjK-uiszS6fRE6R9DNzc2TUPJKj5WFU0kk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Develop Login Feature\",\r\n  \"description\": \"Implement secure login with JWT authentication\",\r\n  \"status\": \"in-progress\",\r\n  \"dueDate\": \"2025-11-25\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTasks with id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGQ5NjQ1MmMxNTRiN2JiODYyZjNhYyIsImlhdCI6MTc2MjQ5ODE1MCwiZXhwIjoxNzYzMTAyOTUwfQ.elygHR15pNjK-uiszS6fRE6R9DNzc2TUPJKj5WFU0kk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tasks/690d96802c154b7bb862f3b0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks",
+								"690d96802c154b7bb862f3b0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTask by pagination",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGQ5NjQ1MmMxNTRiN2JiODYyZjNhYyIsImlhdCI6MTc2MjQ5ODE1MCwiZXhwIjoxNzYzMTAyOTUwfQ.elygHR15pNjK-uiszS6fRE6R9DNzc2TUPJKj5WFU0kk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "pending",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "develop Login Feature",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGQ5MDQyMmMxNTRiN2JiODYyZjM4MyIsImlhdCI6MTc2MjQ5NjU5MCwiZXhwIjoxNzYzMTAxMzkwfQ.rQycW9YzqKGaIE5EyHGI4crpiOQJTBXzapxIl7-uoEs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Update API Documentation\",\r\n  \"description\": \"Added response examples for each endpoint\",\r\n  \"status\": \"in-progress\",\r\n  \"dueDate\": \"2025-11-20\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tasks/690d91db2c154b7bb862f387",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks",
+								"690d91db2c154b7bb862f387"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGQ4NjU5N2NiZmYyNjQ4MDNhODQ5YyIsImlhdCI6MTc2MjQ5NDI2MiwiZXhwIjoxNzYzMDk5MDYyfQ.EVcK0tY1Z1ysVxpTli_MdPMITvetOT_eAwIB5IizLeg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tasks/690d869a7cbff264803a84a0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks",
+								"690d869a7cbff264803a84a0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
